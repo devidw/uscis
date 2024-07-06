@@ -1,0 +1,24 @@
+{
+  "name": "cron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/main.js",
+    "build": "rm -r ./dist && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "db": "workspace:*",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.31.2",
+    "resend": "^3.4.0",
+    "shared": "workspace:*"
+  }
+}
