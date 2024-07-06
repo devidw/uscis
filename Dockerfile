@@ -24,4 +24,4 @@ RUN pnpm install -r --no-frozen-lockfile
 
 RUN pnpm prune --prod
 
-CMD ["pnpm", "-F", "${SERVICE}", "start"]
+CMD ["/bin/bash", "./start.sh"]

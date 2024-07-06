@@ -1,0 +1,1 @@
+pnpm -F $SERVICE start
