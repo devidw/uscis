@@ -11,6 +11,7 @@
 		"start": "PORT=9000 BODY_SIZE_LIMIT=Infinity node ./build/index.js"
 	},
 	"devDependencies": {
+		"@devidw/components": "^12023.3.15",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-node": "^5.2.0",
 		"@sveltejs/kit": "^2.0.0",
@@ -20,6 +21,7 @@
 		"svelte-check": "^3.6.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
+		"unocss": "^0.61.2",
 		"vite": "^5.0.3"
 	},
 	"type": "module",

@@ -1,13 +1,22 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import { Legal } from "@devidw/components/index.js"
+  import "uno.css"
+</script>
 
 <div>
   <slot />
 </div>
 
+<Legal />
+
 <style>
   :global(body) {
     background: black;
     color: gold;
+  }
+
+  :global(a) {
+    text-decoration: none;
   }
 
   div {
