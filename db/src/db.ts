@@ -13,6 +13,10 @@ const client = new pg.Client({
   connectionString: process.env.DB_URL,
 })
 
-await client.connect()
+try {
+  await client.connect()
+} catch (e) {
+  console.warn("db connection error", e)
+}
 
 export const db = drizzle(client, { schema })

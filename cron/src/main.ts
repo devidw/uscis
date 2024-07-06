@@ -21,6 +21,8 @@ const toBeChecked = await db
 await Promise.all(
   toBeChecked.map(async (one) => {
     try {
+      console.info(`[${one.id}]: start`)
+
       const status = await check(one.id)
 
       await db.update(schema.cases).set({
@@ -38,8 +40,12 @@ await Promise.all(
       })
     } catch (e) {
       console.error(e)
+    } finally {
+      console.info(`[${one.id}]: done`)
     }
   })
 )
+
+console.info("done")
 
 process.exit(0)
