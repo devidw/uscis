@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rm -r ./dist && tsc",
+    "build": "rm -r ./dist; tsc",
     "gen": "drizzle-kit generate --config ./drizzle.config.ts"
   },
   "keywords": [],
