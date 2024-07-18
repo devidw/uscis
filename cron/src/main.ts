@@ -1,7 +1,7 @@
 import * as schema from "db/dist/schema.js"
 import { db } from "db/dist/db.js"
 import { check } from "shared/dist/checker.js"
-import { ne } from "drizzle-orm"
+import { eq, ne } from "drizzle-orm"
 import { Resend } from "resend"
 import { config } from "dotenv"
 
@@ -25,10 +25,13 @@ await Promise.all(
 
       const status = await check(one.id)
 
-      await db.update(schema.cases).set({
-        last_check: new Date().toISOString(),
-        last_status: status.actionCodeText,
-      })
+      await db
+        .update(schema.cases)
+        .set({
+          last_check: new Date().toISOString(),
+          last_status: status.actionCodeText,
+        })
+        .where(eq(schema.cases.id, one.id))
 
       if (status.actionCodeText === one.last_status) return
 
