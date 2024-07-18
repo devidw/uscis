@@ -32,12 +32,18 @@ await Promise.all(
 
       if (status.actionCodeText === one.last_status) return
 
-      await resend.emails.send({
-        from: "d@wolf.gdn",
+      const out = await resend.emails.send({
+        from: "uscis@resend.wolf.gdn",
         to: one.email!,
         subject: status.actionCodeText,
         text: status.actionCodeDesc,
       })
+
+      console.info(`[${one.id}: ${JSON.stringify(out.data)}]`)
+
+      if (out.error) {
+        throw out.error
+      }
     } catch (e) {
       console.error(e)
     } finally {
